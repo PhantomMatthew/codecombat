@@ -7,10 +7,12 @@ Classroom = require 'models/Classroom'
 Classrooms = require 'collections/Classrooms'
 User = require 'models/User'
 CourseInstance = require 'models/CourseInstance'
+Prepaids = require 'collections/Prepaids'
 RootView = require 'views/core/RootView'
 template = require 'templates/courses/teacher-courses-view'
 HeroSelectModal = require 'views/courses/HeroSelectModal'
 utils = require 'core/utils'
+api = require 'core/api'
 
 module.exports = class TeacherCoursesView extends RootView
   id: 'teacher-courses-view'
@@ -19,6 +21,7 @@ module.exports = class TeacherCoursesView extends RootView
   events:
     'click .guide-btn': 'onClickGuideButton'
     'click .play-level-button': 'onClickPlayLevel'
+    'click .show-change-log': 'onClickShowChange'
 
   getTitle: -> return $.i18n.t('teacher.courses')
 
@@ -30,13 +33,17 @@ module.exports = class TeacherCoursesView extends RootView
     @ownedClassrooms.fetchMine({data: {project: '_id'}})
     @supermodel.trackCollection(@ownedClassrooms)
     @courses = new Courses()
+    @prepaids = new Prepaids()
+    @paidTeacher = me.isAdmin() or me.isTeacher() and /@codeninjas.com$/i.test me.get('email')
     if me.isAdmin()
       @supermodel.trackRequest @courses.fetch()
     else
       @supermodel.trackRequest @courses.fetchReleased()
+      @supermodel.trackRequest @prepaids.fetchMineAndShared()
     @campaigns = new Campaigns([], { forceCourseNumbering: true })
     @supermodel.trackRequest @campaigns.fetchByType('course', { data: { project: 'levels,levelsUpdated' } })
     @campaignLevelNumberMap = {}
+    @courseChangeLog = {}
     window.tracker?.trackEvent 'Classes Guides Loaded', category: 'Teachers', ['Mixpanel']
 
   onLoaded: ->
@@ -44,7 +51,22 @@ module.exports = class TeacherCoursesView extends RootView
       levels = campaign.getLevels().models.map (level) =>
         key: level.get('original'), practice: level.get('practice') ? false, assessment: level.get('assessment') ? false
       @campaignLevelNumberMap[campaign.id] = utils.createLevelNumberMap(levels)
+    @paidTeacher = @paidTeacher or @prepaids.find((p) => p.get('type') in ['course', 'starter_license'] and p.get('maxRedeemers') > 0)?
+    @fetchChangeLog()
+    me.getClientCreatorPermissions()?.then(() => @render?())
     @render?()
+
+  fetchChangeLog: ->
+    api.courses.fetchChangeLog().then((changeLogInfo) =>
+      @courses.models.forEach (course) =>
+        changeLog = _.filter(changeLogInfo, { 'id' : course.get('_id') })
+        changeLog = _.sortBy(changeLog, 'date')
+        @courseChangeLog[course.id] = _.mapValues(_.groupBy(changeLog, 'date'))
+      @render?()  
+    )
+    .catch((e) =>
+      console.error(e)
+    )
 
   onClickGuideButton: (e) ->
     courseID = $(e.currentTarget).data('course-id')
@@ -66,3 +88,14 @@ module.exports = class TeacherCoursesView extends RootView
           application.router.navigate(url, { trigger: true })
     else
       application.router.navigate(url, { trigger: true })
+
+  onClickShowChange: (e) ->
+    showChangeLog = $(e.currentTarget)
+    changeLogDiv = showChangeLog.closest('.course-change-log')
+    changeLogText = changeLogDiv.find('.change-log')
+    if changeLogText.hasClass('hidden')
+      changeLogText.removeClass('hidden')
+      showChangeLog.text($.i18n.t('courses.hide_change_log'))
+    else
+      changeLogText.addClass('hidden')
+      showChangeLog.text($.i18n.t('courses.show_change_log'))

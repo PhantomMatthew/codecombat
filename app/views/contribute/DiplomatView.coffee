@@ -18,7 +18,7 @@ module.exports = class DiplomatView extends ContributeClassView
         githubURL: "https://github.com/codecombat/codecombat/blob/master/app/locale/#{languageCode}.coffee"
         nativeDescription: language.nativeDescription
         englishDescription: language.englishDescription
-        diplomats: @diplomats[languageCode]
+        diplomats: @diplomats[languageCode] ? []
         nativeDescription: language.nativeDescription
         englishDescription: language.englishDescription
         languageCode: languageCode
@@ -86,7 +86,7 @@ module.exports = class DiplomatView extends ContributeClassView
     nn: ['Ayexa']             # Norsk Nynorsk, Norwegian (Nynorsk)
     he: ['OverProgram', 'monetita']             # עברית, Hebrew
     lt: []             # lietuvių kalba, Lithuanian
-    sr: []             # српски, Serbian
+    sr: ['Vitalije']             # српски, Serbian
     uk: ['ImmortalJoker', 'OlenaGapak', 'Rarst', 'endrilian', 'fess89', 'gorodsb', 'probil', 'CatSkald']             # українська, Ukrainian
     hi: []             # मानक हिन्दी, Hindi
     ur: []             # اُردُو, Urdu

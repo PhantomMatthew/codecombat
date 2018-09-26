@@ -2,6 +2,8 @@ require('app/styles/play/modal/play-heroes-modal.sass')
 ModalView = require 'views/core/ModalView'
 template = require 'templates/play/modal/play-heroes-modal'
 buyGemsPromptTemplate = require 'templates/play/modal/buy-gems-prompt'
+earnGemsPromptTemplate = require 'templates/play/modal/earn-gems-prompt'
+subscribeForGemsPrompt = require 'templates/play/modal/subscribe-for-gems-prompt'
 CocoCollection = require 'collections/CocoCollection'
 ThangType = require 'models/ThangType'
 SpriteBuilder = require 'lib/sprites/SpriteBuilder'
@@ -29,6 +31,7 @@ module.exports = class PlayHeroesModal extends ModalView
     'click .unlock-button': 'onUnlockButtonClicked'
     'click .subscribe-button': 'onSubscribeButtonClicked'
     'click .buy-gems-prompt-button': 'onBuyGemsPromptButtonClicked'
+    'click .start-subscription-button': 'onSubscribeButtonClicked'
     'click': 'onClickedSomewhere'
 
   shortcuts:
@@ -71,7 +74,7 @@ module.exports = class PlayHeroesModal extends ModalView
     hero.unlockBySubscribing = hero.attributes.slug in ['samurai', 'ninja', 'librarian']
     hero.premium = not hero.free and not hero.unlockBySubscribing
     hero.locked = not me.ownsHero(original) and not (hero.unlockBySubscribing and me.isPremium())
-    hero.purchasable = hero.locked and me.isPremium()
+    hero.purchasable = hero.locked and (me.isPremium() or me.allowStudentHeroPurchase())
     if @options.level and allowedHeroes = @options.level.get 'allowedHeroes'
       hero.restricted = not (hero.get('original') in allowedHeroes)
     hero.class = (hero.get('heroClass') or 'warrior').toLowerCase()
@@ -142,11 +145,11 @@ module.exports = class PlayHeroesModal extends ModalView
         {id: 'python', name: "Python (#{$.i18n.t('choose_hero.default')})"}
         {id: 'javascript', name: 'JavaScript'}
         {id: 'coffeescript', name: "CoffeeScript (#{$.i18n.t('choose_hero.experimental')})"}
-        {id: 'lua', name: "Lua (#{$.i18n.t('choose_hero.experimental')})"}
       ]
 
       if me.isAdmin() or not application.isProduction()
         @codeLanguageList.push {id: 'java', name: "Java (#{$.i18n.t('choose_hero.experimental')})"}
+        @codeLanguageList.push {id: 'lua', name: "Lua (#{$.i18n.t('choose_hero.experimental')})"}
 
   onHeroChanged: (e) ->
     direction = e.direction  # 'left' or 'right'
@@ -276,7 +279,7 @@ module.exports = class PlayHeroesModal extends ModalView
     affordable = @visibleHero.get('gems') <= me.gems()
     if not affordable
       @playSound 'menu-button-click'
-      @askToBuyGems button unless me.freeOnly()
+      @askToBuyGemsOrSubscribe button unless me.freeOnly()
     else if button.hasClass('confirm')
       @playSound 'menu-button-unlock-end'
       purchase = Purchase.makeFor(@visibleHero)
@@ -308,9 +311,18 @@ module.exports = class PlayHeroesModal extends ModalView
     createAccountModal = new CreateAccountModal supermodel: @supermodel
     return @openModalView createAccountModal
 
-  askToBuyGems: (unlockButton) ->
+  askToBuyGemsOrSubscribe: (unlockButton) ->
     @$el.find('.unlock-button').popover 'destroy'
-    popoverTemplate = buyGemsPromptTemplate {}
+    if me.isStudent()
+      popoverTemplate = earnGemsPromptTemplate {}
+    else if me.canBuyGems()
+      popoverTemplate = buyGemsPromptTemplate {}
+    else
+      if not me.hasSubscription() # user does not have subscription ask him to subscribe to get more gems, china infra does not have 'buy gems' option
+        popoverTemplate = subscribeForGemsPrompt {}
+      else # user has subscription and yet not enough gems, just ask him to keep playing for more gems
+        popoverTemplate = earnGemsPromptTemplate {}
+      
     unlockButton.popover(
       animation: true
       trigger: 'manual'

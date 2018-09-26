@@ -171,7 +171,7 @@ module.exports =
             sessions = _.filter sessionsForLevel, (session) ->
               session.get('creator') is userID
 
-            courseProgress[levelID][userID].session = _.find(sessions, (s) -> s.completed()) or _.first(sessions)
+            courseProgress[levelID][userID].session = (_.find(sessions, (s) -> s.completed()) or _.first(sessions))?.toJSON()
 
             if _.size(sessions) is 0 # haven't gotten to this level yet, but might have completed others before
               courseProgress.started ||= false unless isOptional #no-op
@@ -222,15 +222,7 @@ module.exports =
     return progressData
 
   courseLabelsArray: (courses) ->
-    labels = []
-    courseLabelIndexes = CS: 0, GD: 0, WD: 0
-    for course in courses
-      acronym = switch
-        when /game-dev/.test(course.get('slug')) then 'GD'
-        when /web-dev/.test(course.get('slug')) then 'WD'
-        else 'CS'
-      labels.push acronym + ++courseLabelIndexes[acronym]
-    labels
+    courses.map((course) -> course.acronym())
 
 progressMixin =
   get: (options={}) ->

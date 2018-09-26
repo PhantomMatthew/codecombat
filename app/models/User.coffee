@@ -1,9 +1,9 @@
-GRAVATAR_URL = 'https://www.gravatar.com/'
 cache = {}
 CocoModel = require './CocoModel'
 ThangTypeConstants = require 'lib/ThangTypeConstants'
 LevelConstants = require 'lib/LevelConstants'
 utils = require 'core/utils'
+api = require 'core/api'
 
 # Pure functions for use in Vue
 # First argument is always a raw User.attributes
@@ -28,13 +28,15 @@ module.exports = class User extends CocoModel
   notyErrors: false
 
   isAdmin: -> 'admin' in @get('permissions', true)
+  isLicensor: -> 'licensor' in @get('permissions', true)
   isArtisan: -> 'artisan' in @get('permissions', true)
   isInGodMode: -> 'godmode' in @get('permissions', true)
-  hasAssessments: -> @isAdmin() or 'assessments' in @get('permissions', true)
   isAnonymous: -> @get('anonymous', true)
   isSmokeTestUser: -> User.isSmokeTestUser(@attributes)
   displayName: -> @get('name', true)
   broadName: -> User.broadName(@attributes)
+
+  inEU: (defaultIfUnknown=true) -> unless @get('country') then defaultIfUnknown else utils.inEU(@get('country'))
 
   getPhotoURL: (size=80) ->
     return '' if application.testing
@@ -44,11 +46,6 @@ module.exports = class User extends CocoModel
     @url() + "/request-verify-email"
 
   getSlugOrID: -> @get('slug') or @get('_id')
-
-  set: ->
-    if arguments[0] is 'jobProfileApproved' and @get("jobProfileApproved") is false and not @get("jobProfileApprovedDate")
-      @set "jobProfileApprovedDate", (new Date()).toISOString()
-    super arguments...
 
   @getUnconflictedName: (name, done) ->
     # deprecate in favor of @checkNameConflicts, which uses Promises and returns the whole response
@@ -88,6 +85,26 @@ module.exports = class User extends CocoModel
 
   isSessionless: ->
     Boolean((utils.getQueryVariable('dev', false) or me.isTeacher()) and utils.getQueryVariable('course', false) and not utils.getQueryVariable('course-instance'))
+
+  getClientCreatorPermissions: ->
+    clientID = @get('clientCreator')
+    if !clientID
+      clientID = utils.getApiClientIdFromEmail(@get('email'))
+    if clientID
+      api.apiClients.getByHandle(clientID)
+      .then((apiClient) => 
+        @clientPermissions = apiClient.permissions
+      )
+      .catch((e) =>
+        console.error(e)
+      )
+
+  canManageLicensesViaUI: -> @clientPermissions?.manageLicensesViaUI ? true
+
+  canRevokeLicensesViaUI: ->
+    if !@clientPermissions or (@clientPermissions.manageLicensesViaUI and @clientPermissions.revokeLicensesViaUI)
+      return true
+    return false
 
   setRole: (role, force=false) ->
     oldRole = @get 'role'
@@ -210,14 +227,6 @@ module.exports = class User extends CocoModel
     return 0 unless numVideos > 0
     return me.get('testGroupNumber') % numVideos
 
-  testCinematicPlayback: ->
-    return @shouldTestCinematicPlayback if @shouldTestCinematicPlayback?
-    return true if me.isAdmin()
-    return false if me.isStudent() or me.isTeacher()
-    @shouldTestCinematicPlayback = me.get('testGroupNumber') % 2 is 0
-    application.tracker.identify cinematicPlayback: @shouldTestCinematicPlayback
-    @shouldTestCinematicPlayback
-
   hasSubscription: ->
     return false if me.isStudent() or me.isTeacher()
     if payPal = @get('payPal')
@@ -254,6 +263,29 @@ module.exports = class User extends CocoModel
         @trigger 'email-verify-error'
     })
 
+  sendKeepMeUpdatedVerificationCode: (code) ->
+    $.ajax({
+      method: 'POST'
+      url: "/db/user/#{@id}/keep-me-updated/#{code}"
+      success: (attributes) =>
+        this.set attributes
+        @trigger 'user-keep-me-updated-success'
+      error: =>
+        @trigger 'user-keep-me-updated-error'
+    })
+
+  sendNoDeleteEUVerificationCode: (code) ->
+    $.ajax({
+      method: 'POST'
+      url: "/db/user/#{@id}/no-delete-eu/#{code}"
+      success: (attributes) =>
+        this.set attributes
+        @trigger 'user-no-delete-eu-success'
+      error: =>
+        @trigger 'user-no-delete-eu-error'
+    })
+
+
   isEnrolled: -> @prepaidStatus() is 'enrolled'
 
   prepaidStatus: -> # 'not-enrolled', 'enrolled', 'expired'
@@ -277,6 +309,12 @@ module.exports = class User extends CocoModel
 
   fetchCreatorOfPrepaid: (prepaid) ->
     @fetch({url: "/db/prepaid/#{prepaid.id}/creator"})
+
+  fetchNameForClassmate: (options={}) ->
+    options.method = 'GET'
+    options.contentType = 'application/json'
+    options.url = "/db/user/#{@id}/name-for-classmate"
+    $.ajax options
 
   # Function meant for "me"
 
@@ -433,14 +471,6 @@ module.exports = class User extends CocoModel
   freeOnly: ->
     return features.freeOnly and not me.isPremium()
 
-  sendParentEmail: (email, options={}) ->
-    options.data ?= {}
-    options.data.type = 'subscribe modal parent'
-    options.data.email = email
-    options.url = '/db/user/-/send_one_time_email'
-    options.method = 'POST'
-    return $.ajax(options)
-
   subscribe: (token, options={}) ->
     stripe = _.clone(@get('stripe') ? {})
     stripe.planID = 'basic'
@@ -465,9 +495,24 @@ module.exports = class User extends CocoModel
     options.method = 'DELETE'
     return $.ajax(options)
 
+  # Feature Flags
+  # Abstract raw settings away from specific UX changes
+  allowStudentHeroPurchase: -> features?.classroomItems ? false and @isStudent()
+  canBuyGems: -> not (features?.chinaUx ? false)
+  constrainHeroHealth: -> features?.classroomItems ? false and @isStudent()
+  showAvatarOnStudentDashboard: -> not (features?.classroomItems ? false) and @isStudent()
+  showGearRestrictionsInClassroom: -> features?.classroomItems ? false and @isStudent()
+  showGemsAndXp: -> features?.classroomItems ? false and @isStudent()
+  showHeroAndInventoryModalsToStudents: -> features?.classroomItems and @isStudent()
+  skipHeroSelectOnStudentSignUp: -> features?.classroomItems ? false
+  useDexecure: -> not (features?.chinaInfra ? false)
+  useSocialSignOn: -> not (features?.chinaUx ? false)
+
+
 tiersByLevel = [-1, 0, 0.05, 0.14, 0.18, 0.32, 0.41, 0.5, 0.64, 0.82, 0.91, 1.04, 1.22, 1.35, 1.48, 1.65, 1.78, 1.96, 2.1, 2.24, 2.38, 2.55, 2.69, 2.86, 3.03, 3.16, 3.29, 3.42, 3.58, 3.74, 3.89, 4.04, 4.19, 4.32, 4.47, 4.64, 4.79, 4.96,
   5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15
 ]
 
 # Make UserLib accessible via eg. User.broadName(userObj)
 _.assign(User, UserLib)
+

@@ -6,6 +6,8 @@ basePath = path.resolve('./app')
 _ = require 'lodash'
 fs = require('fs')
 
+# TODO: stop webpack build on error (e.g. http://dev.topheman.com/how-to-fail-webpack-build-on-error/)
+
 compile = (contents, locals, filename, cb) ->
   # console.log "Compile", filename, basePath
   outFile = filename.replace /.static.pug$/, '.html'
@@ -35,16 +37,18 @@ compile = (contents, locals, filename, cb) ->
     return k.i18n.en[a] if 'i18n' in k
     k[v]
 
-
   try
     fn = new Function(out.body + '\n return template;')()
-    str = fn(_.merge {_, i18n}, locals, require './static-mock')
+    locals = _.merge({_, i18n}, locals, require './static-mock')
+    # TODO: how do we eventually use dynamic global feature flags here?
+    # TODO: this should use chinaUx feature flag instead, but currently comes from process.env
+    locals.me.useDexecure = -> not (locals.chinaInfra ? false)
+    locals.me.useSocialSignOn = -> not (locals.chinaInfra ? false)
+    str = fn(locals)
   catch e
+    console.log "Compile", filename, basePath
+    console.log 'ERROR', e.message
     return cb(e.message)
-
-
-
-
 
   c = cheerio.load(str)
   elms = c('[data-i18n]')
@@ -60,7 +64,7 @@ compile = (contents, locals, filename, cb) ->
   # console.log "Wrote to #{outFile}", deps
 
   # console.log {outFile}
-  
+
   if not fs.existsSync(path.resolve('./public'))
     fs.mkdirSync(path.resolve('./public'))
   if not fs.existsSync(path.resolve('./public/templates'))

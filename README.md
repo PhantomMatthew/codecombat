@@ -9,6 +9,8 @@
 [![Build Status](https://travis-ci.org/codecombat/codecombat.png?branch=master)](https://travis-ci.org/codecombat/codecombat)
 [![Coverage Status](https://coveralls.io/repos/github/codecombat/codecombat/badge.svg)](https://coveralls.io/github/codecombat/codecombat)
 
+**NOTE: The process for setting up the dev environment has changed. Please refer to [the docs for details](../../wiki/Dev-Setup:-General-Information).**
+
 CodeCombat is a multiplayer programming game for learning how to code.
 **See the [Archmage (coder) developer wiki](../../wiki/Archmage-Home) for a dev
 setup guide, extensive documentation, and much more to get started hacking!**
@@ -44,6 +46,8 @@ see the docs for [more on how to contribute](../../wiki/Developer-organization).
 art and music. Please also
 [sign the CodeCombat contributor license agreement](http://codecombat.com/cla)
 so we can accept your pull requests. It is easy.
+
+Note: the levels on codecombat.com are [not open source](LICENSE-LEVELS.md).
 
 ### [Join Us!](http://blog.codecombat.com/why-you-should-open-source-your-startup)
 
