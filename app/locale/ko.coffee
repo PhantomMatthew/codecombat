@@ -138,7 +138,7 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
     poll: "투표" # Tooltip on poll button from /play
     next: "다음" # Go from choose hero to choose inventory before playing a level
     change_hero: "영웅 교체" # Go back from choose inventory to choose hero
-#    change_hero_or_language: "Change Hero or Language"    
+#    change_hero_or_language: "Change Hero or Language"
     buy_gems: "젬 구매"
     subscribers_only: "가입을 해야 합니다."
     subscribe_unlock: "해제하려면 가입을 해 주세요."
@@ -247,7 +247,7 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #    connected_gplus_p: "Finish signing up so you can log in with your Google+ account."
     connected_facebook_header: "페이스북 계정으로 연결되었습니다!"
 #    connected_facebook_p: "Finish signing up so you can log in with your Facebook account."
-#    hey_students: "Students, enter the class code from your teacher." 
+#    hey_students: "Students, enter the class code from your teacher."
     birthday: "생일"
 #    parent_email_blurb: "We know you can't wait to learn programming &mdash; we're excited too! Your parents will receive an email with further instructions on how to create an account for you. Email {{email_link}} if you have any questions."
 #    classroom_not_found: "No classes exist with this Class Code. Check your spelling or ask your teacher for help."
@@ -508,7 +508,6 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
     victory_viking_code_school: "맙소사, 방금 당신이 클리어한 레벨은 정말 어려운 레벨이었어요! 혹시 소프트웨어 개발자인가요? 아직 아니라면, 개발자가 되어 보세요! 바이킹 코드 스쿨에서 14주 동안 전문적인 웹 개발자 교육을 받을 수 있어요."
     victory_become_a_viking: "바이킹이 되기!"
     victory_no_progress_for_teachers: "교사 계정으로는 진행상황이 저장되지 않습니다. 하지만, 당신이 사용할 학생 계정을 하나 추가할 수는 있지요."
-
     tome_cast_button_run: "실행"
     tome_cast_button_running: "실행중"
     tome_cast_button_ran: "실행됨"
@@ -531,7 +530,6 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
     non_user_code_problem_title: "레벨을 로드할 수 없습니다"
     infinite_loop_title: "무한 루프 감지됨"
     infinite_loop_description: "코드 실행이 끝나지 않고 있습니다. 코드가 매우 느리거나 무한 루프에 빠진 것 같습니다. 어쩌면 버그일 수도 있습니다. 이 코드를 다시 실행하거나 초기 상태로 리셋해 보세요. 그래도 해결되지 않으면, 저희에게 알려 주시기 바랍니다."
-    check_dev_console: "You can also open the developer console to see what might be going wrong."
     check_dev_console: "또한 잘못 갈 수를 알기 위해 개발자 콘솔을 열 수 있습니다."
     check_dev_console_link: "(명령어)"
     infinite_loop_try_again: "다시 시도해보세요."
@@ -615,6 +613,9 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #  apis:
 #    methods: "Methods"
 #    events: "Events"
+#    handlers: "Handlers"
+#    properties: "Properties"
+#    snippets: "Snippets"
 #    spawnable: "Spawnable"
 #    html: "HTML"
 #    math: "Math"
@@ -824,7 +825,7 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #    hero_blurb_1: "Get access to __premiumHeroesCount__ super-charged subscriber-only heroes! Harness the unstoppable power of Okar Stompfoot, the deadly precision of Naria of the Leaf, or summon \"adorable\" skeletons with Nalfar Cryptor."
 #    hero_blurb_2: "Premium Warriors unlock stunning martial skills like Warcry, Stomp, and Hurl Enemy. Or, play as a Ranger, using stealth and bows, throwing knives, traps! Try your skill as a true coding Wizard, and unleash a powerful array of Primordial, Necromantic or Elemental magic!"
 #    hero_caption: "Exciting new heroes!"
-#    pet_blurb_1: "Pets aren't just adorable companions, they also provide unique functionality and methods. The Baby Griffon can carry units through the air, the Wolf Pup plays catch with enemy arrows, the Cougar is fond of chasing ogres around, and the Mimic attracts coins like a magnet!"
+#    pet_blurb_1: "Pets aren't just adorable companions, they also provide unique functionality and methods. The Baby Griffin can carry units through the air, the Wolf Pup plays catch with enemy arrows, the Cougar is fond of chasing ogres around, and the Mimic attracts coins like a magnet!"
 #    pet_blurb_2: "Collect all the pets to discover their unique abilities!"
 #    pet_caption: "Adopt pets to accompany your hero!"
 #    game_dev_blurb: "Learn game scripting and build new levels to share with your friends! Place the items you want, write code for unit logic and behavior, and see if your friends can beat the level!"
@@ -950,7 +951,7 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #    david_title: "Marketing Lead"
     retrostyle_title: "일러스트레이션"
     retrostyle_blurb: "레트로스타일 게임"
-#    bryukh_title: "Game Designer"
+#    bryukh_title: "Gameplay Developer"
 #    bryukh_blurb: "Constructs puzzles"
 #    daniela_title: "Content Crafter"
 #    daniela_blurb: "Creates stories"
@@ -980,11 +981,11 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #    jobs_benefits: "Employee Benefits"
 #    jobs_benefit_4: "Unlimited vacation"
 #    jobs_benefit_5: "Professional development and continuing education support – free books and games!"
-#    jobs_benefit_6: "Medical (gold), dental, vision, commuter"
+#    jobs_benefit_6: "Medical (gold), dental, vision, commuter, 401K"
 #    jobs_benefit_7: "Sit-stand desks for all"
 #    jobs_benefit_9: "10-year option exercise window"
-#    jobs_benefit_10: "Maternity leave: 10 weeks paid, next 6 @ 55% salary"
-#    jobs_benefit_11: "Paternity leave: 10 weeks paid"
+#    jobs_benefit_10: "Maternity leave: 12 weeks paid, next 6 @ 55% salary"
+#    jobs_benefit_11: "Paternity leave: 12 weeks paid"
 #    jobs_custom_title: "Create Your Own"
 #    jobs_custom_description: "Are you passionate about CodeCombat but don't see a job listed that matches your qualifications? Write us and show how you think you can contribute to our team. We'd love to hear from you!"
 #    jobs_custom_contact_1: "Send us a note at"
@@ -2175,7 +2176,7 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #    you_can3: "that can be applied to your own account or given to others."
 
   loading_error:
-    could_not_load: "서버로부터 로딩하는 데 문제가 발생했습니다."
+    could_not_load: "서버로부터 로딩하는 데 문제가 발생했습니다." # {change}
     connection_failure: "연결 실패"
 #    connection_failure_desc: "It doesn’t look like you’re connected to the internet! Check your network connection and then reload this page."
 #    login_required: "Login Required"
@@ -2353,7 +2354,7 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 
   legal:
 #    page_title: "Legal"
-    opensource_intro: "코드 컴뱃은 무료이며 전적으로 오픈 소스를 기반으로 합니다." # {change}
+#    opensource_introduction: "CodeCombat is part of the open source community."
     opensource_description_prefix: "코드 컴뱃의"
     github_url: "GitHub"
     opensource_description_center: "를 확인해보세요. 그리고 원하신다면 함께 도와주세요! 코드 컴뱃은 수천 개의 오픈 소스 프로젝트를 기반으로 만들어졌고 저희는 이들에 대해 깊은 애정을 갖고 있습니다. 한번 "
@@ -2579,13 +2580,13 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 
 #  parent_landing:
 #    slogan_quote: "\"CodeCombat is really fun, and you learn a lot.\""
-#    quote_attr: "5th Grader, Oakland"
+#    quote_attr: "5th Grader, Oakland, CA"
 #    refer_teacher: "Refer a Teacher"
 #    focus_quote: "Unlock your child's future"
 #    value_head1: "The most engaging way to learn typed code"
 #    value_copy1: "CodeCombat is child’s personal tutor. Covering material aligned with national curriculum standards, your child will program algorithms, build websites and even design their own games."
 #    value_head2: "Building critical skills for the 21st century"
-#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a problem solving that enhances your child’s critical thinking and resilience."
+#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a solution that enhances your child’s critical thinking and resilience."
 #    value_head3: "Heroes that your child will love"
 #    value_copy3: "We know how important fun and engagement is for the developing brain, so we’ve packed in as much learning as we can while wrapping it up in a game they'll love."
 #    dive_head1: "Not just for software engineers"
@@ -2631,3 +2632,23 @@ module.exports = nativeDescription: "한국어", englishDescription: "Korean", t
 #    message: "Message"
 #    custom_message: "I just found CodeCombat and thought it'd be a great program for your classroom! It's a computer science learning platform with standards-aligned curriculum.\n\nComputer literacy is so important and I think this would be a great way to get students engaged in learning to code."
 #    send: "Send Email"
+
+#  hoc_2018:
+#    learn_more_copy: "CodeCombat is a comprehensive program built for all teachers. Want to take Hour of Code to the next level?"
+#    learn_more: "Learn More"
+#    page_heading: "Teach your students how to build their own arcade game!"
+#    get_started: "Get Started:"
+#    download_lesson: "Download Lesson Plan:"
+#    lesson_copy: "This PDF will take you through how to introduce and close out the Hour of Code lesson, the learning objectives, key terms and concepts, and discussion questions to inspire more coding curiosity."
+#    download_pdf: "Download PDF"
+#    ready_play: "Ready to play?"
+#    play_activity: "Play Activity"
+#    about: "About CodeCombat:"
+#    about_copy: "CodeCombat is a game-based computer science program for teaching real Python and JavaScript. CodeCombat’s standards-aligned curriculum is built around a game that students love. Over 12 million students have learned to code on CodeCombat!"
+#    point1: "✓ Scaffolded"
+#    point2: "✓ Differentiated"
+#    point3: "✓ Formative and Summative Assessments"
+#    point4: "✓ Project-based courses"
+#    point5: "✓ Student tracking"
+#    point6: "✓ Full lesson plans"
+#    request_demo: "Create Teacher Account"

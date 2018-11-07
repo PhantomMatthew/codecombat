@@ -176,10 +176,10 @@ module.exports = class CocoRouter extends Backbone.Router
     'play/level/:levelID': go('play/level/PlayLevelView')
     'play/game-dev-level/:sessionID': go('play/level/PlayGameDevLevelView')
     'play/web-dev-level/:sessionID': go('play/level/PlayWebDevLevelView')
-    'play/game-dev-level/:levelID/:sessionID': (levelID, sessionID) ->
-      @navigate("play/game-dev-level/#{sessionID}", { trigger: true, replace: true })
-    'play/web-dev-level/:levelID/:sessionID': (levelID, sessionID) ->
-      @navigate("play/web-dev-level/#{sessionID}", { trigger: true, replace: true })
+    'play/game-dev-level/:levelID/:sessionID': (levelID, sessionID, queryString) ->
+      @navigate("play/game-dev-level/#{sessionID}?#{queryString}", { trigger: true, replace: true })
+    'play/web-dev-level/:levelID/:sessionID': (levelID, sessionID, queryString) ->
+      @navigate("play/web-dev-level/#{sessionID}?#{queryString}", { trigger: true, replace: true })
     'play/spectate/:levelID': go('play/SpectateView')
     'play/:map': go('play/CampaignView')
 
@@ -208,6 +208,7 @@ module.exports = class CocoRouter extends Backbone.Router
     'teachers/course-solution/:courseID/:language': go('teachers/TeacherCourseSolutionView', { redirectStudents: true })
     'teachers/demo': go('teachers/RequestQuoteView', { redirectStudents: true })
     'teachers/enrollments': redirect('/teachers/licenses')
+    'teachers/hour-of-code': go('special_event/HoC2018View')
     'teachers/licenses': go('courses/EnrollmentsView', { redirectStudents: true, teachersOnly: true })
     'teachers/freetrial': go('teachers/RequestQuoteView', { redirectStudents: true })
     'teachers/quote': redirect('/teachers/demo')

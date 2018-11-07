@@ -1,6 +1,6 @@
 module.exports = nativeDescription: "Ελληνικά", englishDescription: "Greek", translation:
   new_home:
-    slogan: "Το πιο συναρπαστικό παιχνίδι για εκμάθηση προγραμματισμού." # {change}
+    slogan: "Το πιο συναρπαστικό παιχνίδι για εκμάθηση προγραμματισμού."
     classroom_edition: "Έκδοση Αίθουσας Διδασκαλίας:"
     learn_to_code: "Μάθε να προγραμματίζεις:"
     play_now: "Παίξε Τώρα"
@@ -613,6 +613,9 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
   apis:
     methods: "Μέθοδοι"
     events: "Συμβάντα"
+#    handlers: "Handlers"
+#    properties: "Properties"
+#    snippets: "Snippets"
     spawnable: "Αναδυόμενο"
     html: "HTML"
     math: "Μαθηματικά"
@@ -939,7 +942,7 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
     cat_title: "Σχεδιαστής Παιχνιδιού"
     scott_title: "Συνιδρυτής, Μηχανικός λογισμικού"
     maka_title: "Συνήγορος Πελατών"
-    robin_title: "Υπεύθυνος Προϊόντων"
+    robin_title: "Υπεύθυνος Προϊόντων" # {change}
     nolan_title: "Υπεύθυνος Πωλήσεων"
     lisa_title: "Διευθυντής Ανάπτυξης Επιχειρήσεων"
     sean_title: "Διευθυντής Περιοχής"
@@ -948,7 +951,7 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
     david_title: "Υπεύθυνος Προώθησης Προϊόντων"
     retrostyle_title: "Εικονογράφηση"
     retrostyle_blurb: "Ρετρό Παιχνίδια"
-    bryukh_title: "Σχεδιαστής Παιχνιδιού"
+    bryukh_title: "Σχεδιαστής Παιχνιδιού" # {change}
     bryukh_blurb: "Δημιουργός Γρίφων"
 #    daniela_title: "Content Crafter"
 #    daniela_blurb: "Creates stories"
@@ -978,11 +981,11 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
     jobs_benefits: "Παροχές σε Εργαζόμενους"
     jobs_benefit_4: "Απεριόριστες διακοπές"
     jobs_benefit_5: "Επαγγελματική ανάπτυξη και υποστήριξη συνεχούς εκπαίδευσης - δωρεάν βιβλία και παιχνίδια!"
-    jobs_benefit_6: "Φαρμακευτική (χρυσή), οδοντικά, όραση, μετακίνηση από τη δουλειά στο σπίτι"
+    jobs_benefit_6: "Φαρμακευτική (χρυσή), οδοντικά, όραση, μετακίνηση από τη δουλειά στο σπίτι" # {change}
     jobs_benefit_7: "Έπιπλα γραφείου για όλους"
     jobs_benefit_9: "Παράθυρο επιλογών δεκαετούς εξάσκησης"
-    jobs_benefit_10: "Άδεια μητρότητας: 10 εβδομάδες πληρωμένες, οι επόμενες 6 με 55% του μισθού"
-    jobs_benefit_11: "Άδεια πατρότητας: 10 εβδομάδες πληρωμένες"
+    jobs_benefit_10: "Άδεια μητρότητας: 10 εβδομάδες πληρωμένες, οι επόμενες 6 με 55% του μισθού" # {change}
+    jobs_benefit_11: "Άδεια πατρότητας: 10 εβδομάδες πληρωμένες" # {change}
     jobs_custom_title: "Δημιουργήστε τη Δικιά Σας"
     jobs_custom_description: "Είστε παθιασμένοι με το CodeCombat αλλά δεν βλέπετε μια θέση εργασίας που να αντιστοιχεί στα προσόντα σας; Γράψτε και δείξτε μας πώς νομίζετε ότι μπορείτε να συμβάλλετε στην ομάδα μας. Θα θέλαμε να σας ακούσουμε!"
     jobs_custom_contact_1: "Στείλτε μας ένα υπόμνημα της"
@@ -2173,7 +2176,7 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
     you_can3: "που θα χρησιμοποιήσετε στο δικό σας λογαριασμό ή θα το δώσετε σε άλλους."
 
   loading_error:
-    could_not_load: "Σφάλμα φόρτωσης από τον εξυπηρετητή"
+    could_not_load: "Σφάλμα φόρτωσης από τον εξυπηρετητή" # {change}
     connection_failure: "Η σύνδεση απέτυχε."
     connection_failure_desc: "Δεν φαίνεται να είστε συνδεδεμένοι στο Διαδίκτυο! Ελέγξτε τη σύνδεση δικτύου και στη συνέχεια επαναλάβετε τη φόρτωση αυτής της σελίδας."
     login_required: "Απαιτείται Σύνδεση"
@@ -2577,13 +2580,13 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
 
 #  parent_landing:
 #    slogan_quote: "\"CodeCombat is really fun, and you learn a lot.\""
-#    quote_attr: "5th Grader, Oakland"
+#    quote_attr: "5th Grader, Oakland, CA"
 #    refer_teacher: "Refer a Teacher"
 #    focus_quote: "Unlock your child's future"
 #    value_head1: "The most engaging way to learn typed code"
 #    value_copy1: "CodeCombat is child’s personal tutor. Covering material aligned with national curriculum standards, your child will program algorithms, build websites and even design their own games."
 #    value_head2: "Building critical skills for the 21st century"
-#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a problem solving that enhances your child’s critical thinking and resilience."
+#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a solution that enhances your child’s critical thinking and resilience."
 #    value_head3: "Heroes that your child will love"
 #    value_copy3: "We know how important fun and engagement is for the developing brain, so we’ve packed in as much learning as we can while wrapping it up in a game they'll love."
 #    dive_head1: "Not just for software engineers"
@@ -2629,3 +2632,23 @@ module.exports = nativeDescription: "Ελληνικά", englishDescription: "Gre
 #    message: "Message"
 #    custom_message: "I just found CodeCombat and thought it'd be a great program for your classroom! It's a computer science learning platform with standards-aligned curriculum.\n\nComputer literacy is so important and I think this would be a great way to get students engaged in learning to code."
 #    send: "Send Email"
+
+#  hoc_2018:
+#    learn_more_copy: "CodeCombat is a comprehensive program built for all teachers. Want to take Hour of Code to the next level?"
+#    learn_more: "Learn More"
+#    page_heading: "Teach your students how to build their own arcade game!"
+#    get_started: "Get Started:"
+#    download_lesson: "Download Lesson Plan:"
+#    lesson_copy: "This PDF will take you through how to introduce and close out the Hour of Code lesson, the learning objectives, key terms and concepts, and discussion questions to inspire more coding curiosity."
+#    download_pdf: "Download PDF"
+#    ready_play: "Ready to play?"
+#    play_activity: "Play Activity"
+#    about: "About CodeCombat:"
+#    about_copy: "CodeCombat is a game-based computer science program for teaching real Python and JavaScript. CodeCombat’s standards-aligned curriculum is built around a game that students love. Over 12 million students have learned to code on CodeCombat!"
+#    point1: "✓ Scaffolded"
+#    point2: "✓ Differentiated"
+#    point3: "✓ Formative and Summative Assessments"
+#    point4: "✓ Project-based courses"
+#    point5: "✓ Student tracking"
+#    point6: "✓ Full lesson plans"
+#    request_demo: "Create Teacher Account"

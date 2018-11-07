@@ -1,6 +1,6 @@
 module.exports = nativeDescription: "Italiano", englishDescription: "Italian", translation:
   new_home:
-    slogan: "Il più avvincente gioco per imparare a programmare." # {change}
+    slogan: "Il più avvincente gioco per imparare a programmare."
     classroom_edition: "Edizione Scuola:"
     learn_to_code: "Impara a programmare:"
     play_now: "Gioca Ora"
@@ -613,6 +613,9 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
 #  apis:
 #    methods: "Methods"
 #    events: "Events"
+#    handlers: "Handlers"
+#    properties: "Properties"
+#    snippets: "Snippets"
 #    spawnable: "Spawnable"
 #    html: "HTML"
 #    math: "Math"
@@ -822,7 +825,7 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
 #    hero_blurb_1: "Get access to __premiumHeroesCount__ super-charged subscriber-only heroes! Harness the unstoppable power of Okar Stompfoot, the deadly precision of Naria of the Leaf, or summon \"adorable\" skeletons with Nalfar Cryptor."
 #    hero_blurb_2: "Premium Warriors unlock stunning martial skills like Warcry, Stomp, and Hurl Enemy. Or, play as a Ranger, using stealth and bows, throwing knives, traps! Try your skill as a true coding Wizard, and unleash a powerful array of Primordial, Necromantic or Elemental magic!"
 #    hero_caption: "Exciting new heroes!"
-#    pet_blurb_1: "Pets aren't just adorable companions, they also provide unique functionality and methods. The Baby Griffon can carry units through the air, the Wolf Pup plays catch with enemy arrows, the Cougar is fond of chasing ogres around, and the Mimic attracts coins like a magnet!"
+#    pet_blurb_1: "Pets aren't just adorable companions, they also provide unique functionality and methods. The Baby Griffin can carry units through the air, the Wolf Pup plays catch with enemy arrows, the Cougar is fond of chasing ogres around, and the Mimic attracts coins like a magnet!"
 #    pet_blurb_2: "Collect all the pets to discover their unique abilities!"
 #    pet_caption: "Adopt pets to accompany your hero!"
 #    game_dev_blurb: "Learn game scripting and build new levels to share with your friends! Place the items you want, write code for unit logic and behavior, and see if your friends can beat the level!"
@@ -939,7 +942,7 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
     cat_title: "Mastro artigiano" # {change}
     scott_title: "Programmatore" # {change}
 #    maka_title: "Customer Advocate"
-#    robin_title: "Product Manager"
+#    robin_title: "Senior Product Manager"
 #    nolan_title: "Sales Manager"
 #    lisa_title: "Business Development Manager"
 #    sean_title: "Territory Manager"
@@ -948,7 +951,7 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
 #    david_title: "Marketing Lead"
     retrostyle_title: "Illustratore"
     retrostyle_blurb: "Giochi retrò"
-#    bryukh_title: "Game Designer"
+#    bryukh_title: "Gameplay Developer"
 #    bryukh_blurb: "Constructs puzzles"
 #    daniela_title: "Content Crafter"
 #    daniela_blurb: "Creates stories"
@@ -978,11 +981,11 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
 #    jobs_benefits: "Employee Benefits"
 #    jobs_benefit_4: "Unlimited vacation"
 #    jobs_benefit_5: "Professional development and continuing education support – free books and games!"
-#    jobs_benefit_6: "Medical (gold), dental, vision, commuter"
+#    jobs_benefit_6: "Medical (gold), dental, vision, commuter, 401K"
 #    jobs_benefit_7: "Sit-stand desks for all"
 #    jobs_benefit_9: "10-year option exercise window"
-#    jobs_benefit_10: "Maternity leave: 10 weeks paid, next 6 @ 55% salary"
-#    jobs_benefit_11: "Paternity leave: 10 weeks paid"
+#    jobs_benefit_10: "Maternity leave: 12 weeks paid, next 6 @ 55% salary"
+#    jobs_benefit_11: "Paternity leave: 12 weeks paid"
 #    jobs_custom_title: "Create Your Own"
 #    jobs_custom_description: "Are you passionate about CodeCombat but don't see a job listed that matches your qualifications? Write us and show how you think you can contribute to our team. We'd love to hear from you!"
 #    jobs_custom_contact_1: "Send us a note at"
@@ -2173,7 +2176,7 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
     you_can3: "che può essere applciato al tuo account o dato ad un tuo amico."
 
   loading_error:
-    could_not_load: "Errore nel caricamento dal server"
+    could_not_load: "Errore nel caricamento dal server" # {change}
     connection_failure: "Connessione fallita."
     connection_failure_desc: "Sembra che tu non sia connesso ad Internet! Controlla la connessione e poi ricarica questa pagina."
     login_required: "Accesso Richiesto"
@@ -2577,13 +2580,13 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
 
 #  parent_landing:
 #    slogan_quote: "\"CodeCombat is really fun, and you learn a lot.\""
-#    quote_attr: "5th Grader, Oakland"
+#    quote_attr: "5th Grader, Oakland, CA"
 #    refer_teacher: "Refer a Teacher"
 #    focus_quote: "Unlock your child's future"
 #    value_head1: "The most engaging way to learn typed code"
 #    value_copy1: "CodeCombat is child’s personal tutor. Covering material aligned with national curriculum standards, your child will program algorithms, build websites and even design their own games."
 #    value_head2: "Building critical skills for the 21st century"
-#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a problem solving that enhances your child’s critical thinking and resilience."
+#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a solution that enhances your child’s critical thinking and resilience."
 #    value_head3: "Heroes that your child will love"
 #    value_copy3: "We know how important fun and engagement is for the developing brain, so we’ve packed in as much learning as we can while wrapping it up in a game they'll love."
 #    dive_head1: "Not just for software engineers"
@@ -2629,3 +2632,23 @@ module.exports = nativeDescription: "Italiano", englishDescription: "Italian", t
 #    message: "Message"
 #    custom_message: "I just found CodeCombat and thought it'd be a great program for your classroom! It's a computer science learning platform with standards-aligned curriculum.\n\nComputer literacy is so important and I think this would be a great way to get students engaged in learning to code."
 #    send: "Send Email"
+
+#  hoc_2018:
+#    learn_more_copy: "CodeCombat is a comprehensive program built for all teachers. Want to take Hour of Code to the next level?"
+#    learn_more: "Learn More"
+#    page_heading: "Teach your students how to build their own arcade game!"
+#    get_started: "Get Started:"
+#    download_lesson: "Download Lesson Plan:"
+#    lesson_copy: "This PDF will take you through how to introduce and close out the Hour of Code lesson, the learning objectives, key terms and concepts, and discussion questions to inspire more coding curiosity."
+#    download_pdf: "Download PDF"
+#    ready_play: "Ready to play?"
+#    play_activity: "Play Activity"
+#    about: "About CodeCombat:"
+#    about_copy: "CodeCombat is a game-based computer science program for teaching real Python and JavaScript. CodeCombat’s standards-aligned curriculum is built around a game that students love. Over 12 million students have learned to code on CodeCombat!"
+#    point1: "✓ Scaffolded"
+#    point2: "✓ Differentiated"
+#    point3: "✓ Formative and Summative Assessments"
+#    point4: "✓ Project-based courses"
+#    point5: "✓ Student tracking"
+#    point6: "✓ Full lesson plans"
+#    request_demo: "Create Teacher Account"

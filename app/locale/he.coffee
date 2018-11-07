@@ -1,6 +1,6 @@
 module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", translation:
   new_home:
-    slogan: "המשחק הכי מלהיב ללימוד תכנות." # {change}
+    slogan: "המשחק הכי מלהיב ללימוד תכנות."
     classroom_edition: "המהדורה הכיתתית:"
     learn_to_code: "למדו לכתוב קוד:"
     play_now: "שחק עכשיו"
@@ -235,8 +235,8 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
     create_teacher_header: "יצירת חשבון מורה"
     create_individual_header: "יצירת חשבון אישי"
     email_announcements: "קבלו הודעות על שלבים ותכונות חדשים ב-CodeCombat!"
-#    sign_in_to_continue: "Sign in or create an account to continue"
-#    teacher_email_announcements: "Keep me updated on new teacher resources, curriculum, and courses!"
+    sign_in_to_continue: "היכנס או צור חשבון על מנת להמשיך"
+    teacher_email_announcements: "עדכנו אותי בחומרים למורים, תכנית הלימודים וקורסים"
     creating: "יוצר חשבון..."
     sign_up: "הרשמה"
     log_in: "היכנס עם סיסמה"
@@ -307,7 +307,7 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
 #    want_codecombat_in_school: "Want to play CodeCombat all the time?"
 #    eu_confirmation: "I agree to allow CodeCombat to store my data on US servers."
 #    eu_confirmation_place_of_processing: "Learn more about the possible risks"
-#    eu_confirmation_student: "If you are not sure, ask your teacher."
+    eu_confirmation_student: "אם אתה לא בטוח, תשאל את המורה שלך"
 #    eu_confirmation_individual: "If you do not want us to store your data on US servers, you can always keep playing anonymously without saving your code."
 
   recover:
@@ -613,6 +613,9 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
 #  apis:
 #    methods: "Methods"
 #    events: "Events"
+#    handlers: "Handlers"
+#    properties: "Properties"
+#    snippets: "Snippets"
 #    spawnable: "Spawnable"
 #    html: "HTML"
 #    math: "Math"
@@ -939,7 +942,7 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
     cat_title: "מעצבת משחק"
     scott_title: "מייסד-שותף, הנדסת תוכנה"
     maka_title: "מקדם לקוחות"
-    robin_title: "מנהלת מוצר"
+    robin_title: "מנהלת מוצר" # {change}
     nolan_title: "מנהל טריטוריה" # {change}
     lisa_title: "מומחית לבתי ספר" # {change}
     sean_title: "מנהל טריטוריה"
@@ -948,7 +951,7 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
 #    david_title: "Marketing Lead"
     retrostyle_title: "איור"
     retrostyle_blurb: "משחקי רטרו"
-    bryukh_title: "מעצב משחק"
+    bryukh_title: "מעצב משחק" # {change}
     bryukh_blurb: "בונה פאזלים"
 #    daniela_title: "Content Crafter"
 #    daniela_blurb: "Creates stories"
@@ -978,11 +981,11 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
     jobs_benefits: "הטבות עובדים"
     jobs_benefit_4: "חופשות ללא הגבלה"
     jobs_benefit_5: "התפתחות מקצועית והמשך תמיכה בהשכלה - ספרים ומשחקים בחינם!"
-    jobs_benefit_6: "ביטוח רפואי (זהב), שיניים, ראייה, נסיעות"
+    jobs_benefit_6: "ביטוח רפואי (זהב), שיניים, ראייה, נסיעות" # {change}
     jobs_benefit_7: "עמדות ישיבה-עמידה לכולם"
     jobs_benefit_9: "חלון של 10 שנים למימוש אופציות"
-    jobs_benefit_10: "חופשת לידה: 10 שבועות בתשלום, וששת השבועות הבאים ב-55% שכר"
-    jobs_benefit_11: "חופשת אב: 10 שבועות בתשלום"
+    jobs_benefit_10: "חופשת לידה: 10 שבועות בתשלום, וששת השבועות הבאים ב-55% שכר" # {change}
+    jobs_benefit_11: "חופשת אב: 10 שבועות בתשלום" # {change}
     jobs_custom_title: "יצירה משלך"
     jobs_custom_description: "מתלהבים מ-CodeCombat, אבל לא מוצאים כאן משרה שמתאימה לכישורים שלכם? כתבו וספרו לנו כיצד לדעתכם תוכלו לתרום לצוות שלנו. נשמח לשמוע מכם!"
     jobs_custom_contact_1: "שלחו אלינו הודעה אל"
@@ -2173,7 +2176,7 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
     you_can3: "אשר ניתן להחיל על חשבונך או לתת למשתמשים אחרים."
 
   loading_error:
-    could_not_load: "אירעה שגיאה בטעינה מהשרת"
+    could_not_load: "אירעה שגיאה בטעינה מהשרת" # {change}
     connection_failure: "ההתחברות נכשלה"
     connection_failure_desc: "נראה שאינך מחובר לאינטרנט! בדוק את החיבור לרשת, ונסה לטעון דף זה מחדש."
     login_required: "נדרשת כניסה למערכת"
@@ -2577,13 +2580,13 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
 
 #  parent_landing:
 #    slogan_quote: "\"CodeCombat is really fun, and you learn a lot.\""
-#    quote_attr: "5th Grader, Oakland"
+#    quote_attr: "5th Grader, Oakland, CA"
 #    refer_teacher: "Refer a Teacher"
 #    focus_quote: "Unlock your child's future"
 #    value_head1: "The most engaging way to learn typed code"
 #    value_copy1: "CodeCombat is child’s personal tutor. Covering material aligned with national curriculum standards, your child will program algorithms, build websites and even design their own games."
 #    value_head2: "Building critical skills for the 21st century"
-#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a problem solving that enhances your child’s critical thinking and resilience."
+#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a solution that enhances your child’s critical thinking and resilience."
 #    value_head3: "Heroes that your child will love"
 #    value_copy3: "We know how important fun and engagement is for the developing brain, so we’ve packed in as much learning as we can while wrapping it up in a game they'll love."
 #    dive_head1: "Not just for software engineers"
@@ -2629,3 +2632,23 @@ module.exports = nativeDescription: "עברית", englishDescription: "Hebrew", 
 #    message: "Message"
 #    custom_message: "I just found CodeCombat and thought it'd be a great program for your classroom! It's a computer science learning platform with standards-aligned curriculum.\n\nComputer literacy is so important and I think this would be a great way to get students engaged in learning to code."
 #    send: "Send Email"
+
+#  hoc_2018:
+#    learn_more_copy: "CodeCombat is a comprehensive program built for all teachers. Want to take Hour of Code to the next level?"
+#    learn_more: "Learn More"
+#    page_heading: "Teach your students how to build their own arcade game!"
+#    get_started: "Get Started:"
+#    download_lesson: "Download Lesson Plan:"
+#    lesson_copy: "This PDF will take you through how to introduce and close out the Hour of Code lesson, the learning objectives, key terms and concepts, and discussion questions to inspire more coding curiosity."
+#    download_pdf: "Download PDF"
+#    ready_play: "Ready to play?"
+#    play_activity: "Play Activity"
+#    about: "About CodeCombat:"
+#    about_copy: "CodeCombat is a game-based computer science program for teaching real Python and JavaScript. CodeCombat’s standards-aligned curriculum is built around a game that students love. Over 12 million students have learned to code on CodeCombat!"
+#    point1: "✓ Scaffolded"
+#    point2: "✓ Differentiated"
+#    point3: "✓ Formative and Summative Assessments"
+#    point4: "✓ Project-based courses"
+#    point5: "✓ Student tracking"
+#    point6: "✓ Full lesson plans"
+#    request_demo: "Create Teacher Account"

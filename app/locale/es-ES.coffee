@@ -1,6 +1,6 @@
 module.exports = nativeDescription: "español (ES)", englishDescription: "Spanish (Spain)", translation:
   new_home:
-    slogan: "El juego más atractivo para aprender a programar." # {change}
+    slogan: "El juego más atractivo para aprender a programar."
     classroom_edition: "Edición para aulas:"
     learn_to_code: "Aprende a programar:"
     play_now: "Juega ahora"
@@ -119,7 +119,7 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 
   play:
     play_as: "Jugar como" # Ladder page
-#    get_course_for_class: "Assign Game Development and more to your classes!"
+    get_course_for_class: "¡Asigna desarrollo de juegos y más a tus clases!" 
 #    request_licenses: "Contact our school specialists for details."
     compete: "¡Compite!" # Course details page
     spectate: "Observar" # Ladder page
@@ -138,12 +138,12 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
     poll: "Encuesta" # Tooltip on poll button from /play
     next: "Siguiente Heroe" # Go from choose hero to choose inventory before playing a level
     change_hero: "Seleccionar Heroe" # Go back from choose inventory to choose hero
-#    change_hero_or_language: "Change Hero or Language"
+    change_hero_or_language: "Cambiar héroe o idioma"
     buy_gems: "Comprar Joyas"
     subscribers_only: "¡Solo para suscriptores!"
     subscribe_unlock: "¡Subscríbete para desbloquearlos!"
-#    subscriber_heroes: "Subscribe today to immediately unlock Amara, Hushbaum, and Hattori!"
-#    subscriber_gems: "Subscribe today to purchase this hero with gems!"
+    subscriber_heroes: "¡Suscríbete hoy para desbloquear inmediatamente Amara, Hushbaum y Hattori!" 
+    subscriber_gems: "¡Suscríbete hoy para comprar este héroe con gemas!" 
     anonymous: "Jugador Anónimo"
     level_difficulty: "Dificultad: "
     awaiting_levels_adventurer_prefix: "Liberamos nuevos niveles cada semana."
@@ -152,12 +152,12 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
     adjust_volume: "Ajustar volúmen"
     campaign_multiplayer: "Arenas Multijugador"
     campaign_multiplayer_description: "... en las que tu código se enfrentará al de otros jugadores."
-#    brain_pop_done: "You’ve defeated the Ogres with code! You win!"
-#    brain_pop_challenge: "Challenge yourself to play again using a different programming language!"
+    brain_pop_done: "¡Has vencido a los Ogros con código! ¡Ganaste!"
+    brain_pop_challenge: "Retarte a jugar otra vez usando un lenguaje de programación diferente!" 
 #    replay: "Replay"
-#    back_to_classroom: "Back to Classroom"
-#    teacher_button: "For Teachers"
-#    get_more_codecombat: "Get More CodeCombat"
+    back_to_classroom: "Regresa a la clase"
+    teacher_button: "Para maestros"
+    get_more_codecombat: "Obtener más CodeCombat"
 
   code:
     if: "si" # Keywords--these translations show up on hover, so please translate them all, even if it's kind of long. (In the code editor, they will still be in English.)
@@ -256,16 +256,16 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
     sign_in: "Iniciar Sesión"
     email_good: "¡El email parece bueno!"
 #    name_taken: "Username already taken! Try {{suggestedName}}?"
-#    name_available: "Username available!"
-#    name_is_email: "Username may not be an email"
-#    choose_type: "Choose your account type:"
-#    teacher_type_1: "Teach programming using CodeCombat!"
-#    teacher_type_2: "Set up your class"
-#    teacher_type_3: "Access Course Guides"
-#    teacher_type_4: "View student progress"
+    name_available: "Nombre de usuario disponible!" # "Username available!"
+    name_is_email: "El nombre de usuario no puede ser un correo electrónico" # "Username may not be an email"
+    choose_type: "Elija su tipo de cuenta:" # "Choose your account type:"
+    teacher_type_1: "Enseñar programación utilizando CodeCombat!" # "Teach programming using CodeCombat!"
+    teacher_type_2: "Configura tu clase" # "Set up your class"
+    teacher_type_3: "Acceder a las guías del curso" # "Access Course Guides"
+    teacher_type_4: "Ver el progreso del estudiante" # "View student progress"
     signup_as_teacher: "Iniciar sesión como Maestro"
-#    student_type_1: "Learn to program while playing an engaging game!"
-#    student_type_2: "Play with your class"
+    student_type_1: "¡Aprende a programar mientras juegas un juego atractivo!" # "Learn to program while playing an engaging game!"
+    student_type_2: "Juega con tu clase" # "Play with your class"
 #    student_type_3: "Compete in arenas"
 #    student_type_4: "Choose your hero!"
 #    student_type_5: "Have your Class Code ready!"
@@ -613,6 +613,9 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 #  apis:
 #    methods: "Methods"
 #    events: "Events"
+#    handlers: "Handlers"
+#    properties: "Properties"
+#    snippets: "Snippets"
 #    spawnable: "Spawnable"
 #    html: "HTML"
 #    math: "Math"
@@ -822,7 +825,7 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 #    hero_blurb_1: "Get access to __premiumHeroesCount__ super-charged subscriber-only heroes! Harness the unstoppable power of Okar Stompfoot, the deadly precision of Naria of the Leaf, or summon \"adorable\" skeletons with Nalfar Cryptor."
 #    hero_blurb_2: "Premium Warriors unlock stunning martial skills like Warcry, Stomp, and Hurl Enemy. Or, play as a Ranger, using stealth and bows, throwing knives, traps! Try your skill as a true coding Wizard, and unleash a powerful array of Primordial, Necromantic or Elemental magic!"
 #    hero_caption: "Exciting new heroes!"
-#    pet_blurb_1: "Pets aren't just adorable companions, they also provide unique functionality and methods. The Baby Griffon can carry units through the air, the Wolf Pup plays catch with enemy arrows, the Cougar is fond of chasing ogres around, and the Mimic attracts coins like a magnet!"
+#    pet_blurb_1: "Pets aren't just adorable companions, they also provide unique functionality and methods. The Baby Griffin can carry units through the air, the Wolf Pup plays catch with enemy arrows, the Cougar is fond of chasing ogres around, and the Mimic attracts coins like a magnet!"
 #    pet_blurb_2: "Collect all the pets to discover their unique abilities!"
 #    pet_caption: "Adopt pets to accompany your hero!"
 #    game_dev_blurb: "Learn game scripting and build new levels to share with your friends! Place the items you want, write code for unit logic and behavior, and see if your friends can beat the level!"
@@ -939,7 +942,7 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
     cat_title: "Jefe Artesano" # {change}
     scott_title: "Co-Fundador" # {change}
 #    maka_title: "Customer Advocate"
-#    robin_title: "Product Manager"
+#    robin_title: "Senior Product Manager"
 #    nolan_title: "Sales Manager"
 #    lisa_title: "Business Development Manager"
 #    sean_title: "Territory Manager"
@@ -948,7 +951,7 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 #    david_title: "Marketing Lead"
     retrostyle_title: "Illustración"
     retrostyle_blurb: "RetroStyle Games"
-#    bryukh_title: "Game Designer"
+#    bryukh_title: "Gameplay Developer"
 #    bryukh_blurb: "Constructs puzzles"
 #    daniela_title: "Content Crafter"
 #    daniela_blurb: "Creates stories"
@@ -978,11 +981,11 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 #    jobs_benefits: "Employee Benefits"
 #    jobs_benefit_4: "Unlimited vacation"
 #    jobs_benefit_5: "Professional development and continuing education support – free books and games!"
-#    jobs_benefit_6: "Medical (gold), dental, vision, commuter"
+#    jobs_benefit_6: "Medical (gold), dental, vision, commuter, 401K"
 #    jobs_benefit_7: "Sit-stand desks for all"
 #    jobs_benefit_9: "10-year option exercise window"
-#    jobs_benefit_10: "Maternity leave: 10 weeks paid, next 6 @ 55% salary"
-#    jobs_benefit_11: "Paternity leave: 10 weeks paid"
+#    jobs_benefit_10: "Maternity leave: 12 weeks paid, next 6 @ 55% salary"
+#    jobs_benefit_11: "Paternity leave: 12 weeks paid"
 #    jobs_custom_title: "Create Your Own"
 #    jobs_custom_description: "Are you passionate about CodeCombat but don't see a job listed that matches your qualifications? Write us and show how you think you can contribute to our team. We'd love to hear from you!"
 #    jobs_custom_contact_1: "Send us a note at"
@@ -2173,7 +2176,7 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 #    you_can3: "that can be applied to your own account or given to others."
 
   loading_error:
-    could_not_load: "Error al cargar desde el servidor."
+    could_not_load: "Error al cargar desde el servidor." # {change}
     connection_failure: "Fallo en la conexión."
     connection_failure_desc: "No parece que estés conectado a Internet! Comprueba tu conexión de red y vuelva a cargar esta página."
     login_required: "Necesario iniciar sesión"
@@ -2577,13 +2580,13 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 
 #  parent_landing:
 #    slogan_quote: "\"CodeCombat is really fun, and you learn a lot.\""
-#    quote_attr: "5th Grader, Oakland"
+#    quote_attr: "5th Grader, Oakland, CA"
 #    refer_teacher: "Refer a Teacher"
 #    focus_quote: "Unlock your child's future"
 #    value_head1: "The most engaging way to learn typed code"
 #    value_copy1: "CodeCombat is child’s personal tutor. Covering material aligned with national curriculum standards, your child will program algorithms, build websites and even design their own games."
 #    value_head2: "Building critical skills for the 21st century"
-#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a problem solving that enhances your child’s critical thinking and resilience."
+#    value_copy2: "Your kids will learn how to navigate and become citizens in the digital world. CodeCombat is a solution that enhances your child’s critical thinking and resilience."
 #    value_head3: "Heroes that your child will love"
 #    value_copy3: "We know how important fun and engagement is for the developing brain, so we’ve packed in as much learning as we can while wrapping it up in a game they'll love."
 #    dive_head1: "Not just for software engineers"
@@ -2629,3 +2632,23 @@ module.exports = nativeDescription: "español (ES)", englishDescription: "Spanis
 #    message: "Message"
 #    custom_message: "I just found CodeCombat and thought it'd be a great program for your classroom! It's a computer science learning platform with standards-aligned curriculum.\n\nComputer literacy is so important and I think this would be a great way to get students engaged in learning to code."
 #    send: "Send Email"
+
+#  hoc_2018:
+#    learn_more_copy: "CodeCombat is a comprehensive program built for all teachers. Want to take Hour of Code to the next level?"
+#    learn_more: "Learn More"
+#    page_heading: "Teach your students how to build their own arcade game!"
+#    get_started: "Get Started:"
+#    download_lesson: "Download Lesson Plan:"
+#    lesson_copy: "This PDF will take you through how to introduce and close out the Hour of Code lesson, the learning objectives, key terms and concepts, and discussion questions to inspire more coding curiosity."
+#    download_pdf: "Download PDF"
+#    ready_play: "Ready to play?"
+#    play_activity: "Play Activity"
+#    about: "About CodeCombat:"
+#    about_copy: "CodeCombat is a game-based computer science program for teaching real Python and JavaScript. CodeCombat’s standards-aligned curriculum is built around a game that students love. Over 12 million students have learned to code on CodeCombat!"
+#    point1: "✓ Scaffolded"
+#    point2: "✓ Differentiated"
+#    point3: "✓ Formative and Summative Assessments"
+#    point4: "✓ Project-based courses"
+#    point5: "✓ Student tracking"
+#    point6: "✓ Full lesson plans"
+#    request_demo: "Create Teacher Account"
